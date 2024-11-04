@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Línea de Tiempo - Sesión en Metaverso FrameVR</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    h1 {
+      color: #333;
+    }
+    .timeline {
+      width: 90%;
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 0;
+      list-style-type: none;
+      position: relative;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      width: 4px;
+      background-color: #c4c4c4;
+      height: 100%;
+      top: 0;
+      transform: translateX(-50%);
+    }
+    .timeline-item {
+      padding: 20px;
+      position: relative;
+      width: 45%;
+      text-align: left;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin: 10px 0;
+    }
+    .timeline-item:nth-child(odd) {
+      left: 0;
+    }
+    .timeline-item:nth-child(even) {
+      left: 50%;
+    }
+    .timeline-item::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #333;
+      border-radius: 50%;
+      top: 20px;
+      left: calc(100% + 10px);
+    }
+    .timeline-item:nth-child(even)::after {
+      left: -30px;
+    }
+    .timeline-item h2 {
+      color: #333;
+    }
+    .timeline-item p {
+      color: #555;
+      margin: 0;
+    }
+    .toggle-btn {
+      color: #007bff;
+      cursor: pointer;
+      margin-top: 10px;
+      display: inline-block;
+    }
+    .details {
+      display: none;
+      color: #333;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Línea de Tiempo: Sesión en Metaverso FrameVR - Tuberías y Canales</h1>
+<ul class="timeline">
+
+  <li class="timeline-item">
+    <h2>Capacitación en Creación de Avatar (6:00 - 6:20 p.m.)</h2>
+    <p><strong>Duración:</strong> 20 minutos</p>
+    <p><strong>Descripción:</strong> Creación de avatar de androide a humano para familiarizarse con el entorno.</p>
+    <span class="toggle-btn" onclick="toggleDetails(this)">Ver más</span>
+    <div class="details">
+      <p><strong>Propósito Pedagógico:</strong> Facilitar la adaptación al metaverso.</p>
+      <p><strong>Indicador de Logro:</strong> Todos los estudiantes configuran sus avatares.</p>
+    </div>
+  </li>
+
+  <li class="timeline-item">
+    <h2>Recorrido Virtual y Reconocimiento de Salas (6:20 - 6:30 p.m.)</h2>
+    <p><strong>Duración:</strong> 10 minutos</p>
+    <p><strong>Descripción:</strong> Recorrido para conocer el ambiente y las salas temáticas.</p>
+    <span class="toggle-btn" onclick="toggleDetails(this)">Ver más</span>
+    <div class="details">
+      <p><strong>Propósito Pedagógico:</strong> Adaptación al entorno y comprensión del espacio.</p>
+      <p><strong>Indicador de Logro:</strong> Todos los estudiantes localizan las salas.</p>
+    </div>
+  </li>
+
+  <li class="timeline-item">
+    <h2>Asistencia a Charlas y Relatorías (6:30 - 7:30 p.m.)</h2>
+    <p><strong>Duración:</strong> 60 minutos</p>
+    <p><strong>Descripción:</strong> Charlas en 4 salas y toma de notas sobre cada tema.</p>
+    <span class="toggle-btn" onclick="toggleDetails(this)">Ver más</span>
+    <div class="details">
+      <p><strong>Temas:</strong> Medidores de flujo, flujo en vertederos, flujo en compuerta plana, flujo en compuerta de segmento.</p>
+      <p><strong>Propósito Pedagógico:</strong> Aprendizaje activo y comprensión de conceptos técnicos.</p>
+      <p><strong>Indicador de Logro:</strong> Notas detalladas en relatorías que reflejan comprensión.</p>
+    </div>
+  </li>
+
+  <li class="timeline-item">
+    <h2>Reunión y Entrega de Relatorías (7:30 - 7:40 p.m.)</h2>
+    <p><strong>Duración:</strong> 10 minutos</p>
+    <p><strong>Descripción:</strong> Explicación final de la entrega de relatorías en punto de encuentro.</p>
+    <span class="toggle-btn" onclick="toggleDetails(this)">Ver más</span>
+    <div class="details">
+      <p><strong>Propósito Pedagógico:</strong> Aclarar instrucciones y criterios de entrega.</p>
+      <p><strong>Indicador de Logro:</strong> Todos comprenden el procedimiento de entrega.</p>
+    </div>
+  </li>
+
+  <li class="timeline-item">
+    <h2>Reflexión Final en Video en Padlet (7:40 - 8:00 p.m.)</h2>
+    <p><strong>Duración:</strong> 20 minutos</p>
+    <p><strong>Descripción:</strong> Los estudiantes crean un video comentando su experiencia en el metaverso.</p>
+    <span class="toggle-btn" onclick="toggleDetails(this)">Ver más</span>
+    <div class="details">
+      <p><strong>Propósito Pedagógico:</strong> Reflexión sobre el aprendizaje en un entorno inmersivo.</p>
+      <p><strong>Indicador de Logro:</strong> Todos suben el video a Padlet con reflexión clara y detallada.</p>
+    </div>
+  </li>
+
+</ul>
+
+<script>
+  function toggleDetails(button) {
+    const details = button.nextElementSibling;
+    details.style.display = details.style.display === "block" ? "none" : "block";
+    button.textContent = details.style.display === "block" ? "Ver menos" : "Ver más";
+  }
+</script>
+
+</body>
+</html>
